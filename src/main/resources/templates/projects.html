@@ -63,7 +63,7 @@
             font-family: Cursive;
         }
 
-        .photo {
+        .photo1,.photo2,.photo3,.photo4 {
             width: 100%;
             height: auto;
             display: block;
@@ -114,13 +114,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <figure>
-                        <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo">
-                        <figcaption class="photo-caption">ΚΟΛΥΜΠΑΡΙ</figcaption>
+                            <img id="photo" class="photo1" src="">
+                            <figcaption class="photo-caption">ΚΟΛΥΜΠΑΡΙ</figcaption>
                         </figure>
                     </div>
                     <div class="col-md-6">
                         <figure>
-                            <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo">
+                            <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo2">
                             <figcaption class="photo-caption">ΕΛΕΥΣΙΝΑ</figcaption>
                         </figure>
                     </div>
@@ -128,14 +128,14 @@
                 <div class="row">
                     <div class="col-md-6">
                         <figure>
-                            <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo">
+                            <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo3">
                             <figcaption class="photo-caption">ΜΕΤΑΞΟΥΡΓΕΙΟ</figcaption>
                         </figure>
                     </div>
                     <div class="col-md-6">
                         <figure>
-                        <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo">
-                        <figcaption class="photo-caption">ΜΗΘΥΜΝΗΣ</figcaption>
+                            <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo4">
+                            <figcaption class="photo-caption">ΜΗΘΥΜΝΗΣ</figcaption>
                         </figure>
                     </div>
                 </div>
@@ -146,5 +146,30 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Array of photo URLs
+    const photoUrls = [
+        "https://www.online-image-editor.com/styles/2019/images/power_girl.png",
+        "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-674010.jpg&fm=jpg",
+        "https://latestforyouth.com/wp-content/uploads/2022/04/Indian-Girl-Images-042202.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function rotatePhotos() {
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % photoUrls.length;
+            updatePhoto(currentIndex);
+        }, 3000);
+    }
+
+    function updatePhoto(index) {
+        const photoElement = document.querySelector(".photo1");
+
+        photoElement.src = photoUrls[index];
+    }
+
+    rotatePhotos();
+</script>
 </body>
 </html>
