@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cognitive Games </title>
+</head>
+<body>
+<div>
+  <div align="center">
+    <h1> Games List</h1>
+    <table>
+      <thead>
+      <tr>
+        <th> Game </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="game : ${listGames}">
+        <td th:text="${game.game}"></td>
+      </tr>
+      </tbody>
+    </table>
+</div>
+</div>
+
+<div>
+  <form method="post" action="#" th:action="@{/}" th:object="${value}">
+    // This will now receive form object
+  </form>
+</div>
+
+</body>
+</html>

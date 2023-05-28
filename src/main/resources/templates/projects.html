@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimal Design Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            margin: 0;
+        }
+
+        .sidebar {
+            position: relative;
+            overflow: hidden;
+            width: 200px;
+            padding: 20px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100px;
+            width: 300px;
+            height: 100%;
+            background-color: #f2f2f2;
+            transform: skewX(-30deg);
+            z-index: -1;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* Change menu characters color */
+        .sidebar .nav-item .nav-link {
+            color: #826969 !important;
+        }
+
+        .photo-caption {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px 10px;
+            text-align: center;
+            /*font-weight: bold;*/
+            border-radius: 5px;
+            font-family: Cursive;
+        }
+
+        .photo {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 40px; /* Add desired space between rows */
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 sidebar">
+            <h3>Menu</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/pdf}" target="_blank">Portofolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Bio </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/projects}" href="#">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/dimitra-korkidaki-7466071a5/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.instagram.com/dh.krk/" target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-9 content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <figure>
+                        <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo">
+                        <figcaption class="photo-caption">ΚΟΛΥΜΠΑΡΙ</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <figure>
+                            <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo">
+                            <figcaption class="photo-caption">ΕΛΕΥΣΙΝΑ</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <figure>
+                            <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo">
+                            <figcaption class="photo-caption">ΜΕΤΑΞΟΥΡΓΕΙΟ</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <figure>
+                        <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-66.fit_lim.size_1050x.jpg"  class="photo">
+                        <figcaption class="photo-caption">ΜΗΘΥΜΝΗΣ</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
